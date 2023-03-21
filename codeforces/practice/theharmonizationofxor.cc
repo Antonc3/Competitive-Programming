@@ -11,26 +11,20 @@ void solve(){
         used[x] = 1;
     }
     for(int i = 1; i <= n; i++){
-        // cout << "i: " << i << " i^x: " << (i^x)<<endl;
-        // cout << "used[i] " << used[i] << " used[i^x] " << used[i^x]<<endl;
         if(used[i]>0) continue;
-        // cout << "N: " << n << " WTF: " <<((i^x) > n) << endl;
         if(((i^x) > n) || used[i^x]>0){
-            // cout << "INHERERE!\n";
             continue;
         } 
         subseq.push_back({i,i^x});
         used[i] = 1;
         used[i^x] =1;
     }
-    // cout << "subseq.size(): " << subseq.size()<<endl;;
     vector<int> cur;
     int s = 0;
     for(int i = 1; i <= n; i++){
         if(!used[i]){
             cur.push_back(i);
             s ^= i;
-            // cout << "i: " << i << " s: " << s<<endl;
         } 
     }
     if(subseq.size() > 0 && s==0) subseq.back().insert(subseq.back().begin(),cur.begin(),cur.end());
