@@ -55,7 +55,6 @@ void solve(){
                     break;
                 }
             }
-
             last.push_back(nums[found].length());
             ii += last.back()-1;
             if(found == -1) break;

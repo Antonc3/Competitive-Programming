@@ -27,8 +27,8 @@ void solve(){
     for(int iter = 0; iter < 200; iter++){
         ///check for m;
         double m = (l+r)/2;
-        priority_queue<pair<int,double>> pq;
         bool possible = true;
+        priority_queue<pair<int,double>> pq;
         for(int i = 0; i < n; i++){
             pq.push(v[i]);
             double neededAmount = m*k;
